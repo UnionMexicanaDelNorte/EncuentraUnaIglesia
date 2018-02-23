@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using maptest.Views;
+using Xamarin.Forms;
 
 namespace maptest
 {
@@ -8,7 +9,7 @@ namespace maptest
         {
             InitializeComponent();
 
-            MainPage = new map_testPage();
+            MainPage = new CatalogoView();
         }
 
         protected override void OnStart()

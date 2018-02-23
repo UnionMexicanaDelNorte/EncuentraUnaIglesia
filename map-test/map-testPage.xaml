@@ -1,4 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:maptest" x:Class="maptest.map_testPage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:maptest" 
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    x:Class="maptest.map_testPage">
+ <StackLayout  Padding="10" VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Hybrid" Clicked="Handle_Hybrid" HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="Center"/>
+            <Button Grid.Column="1" Text="Street" Clicked="Handle_Street" HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="Center"/>
+            <Button Grid.Column="2" Text="Satellite" Clicked="Handle_Satellite"/>
+        </Grid>
+        <maps:Map 
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Street"/>
+        <Button Text="Cargar" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="Center" Clicked="Handle_Clicked"/>
+    </StackLayout>
 </ContentPage>

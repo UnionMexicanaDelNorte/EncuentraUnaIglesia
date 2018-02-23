@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BindingContext="{StaticResource catalogoViewModel}"
+    x:Class="maptest.Views.CatalogoView">
+<!--	<ContentPage.Content>-->
+    <StackLayout Padding="10">
+        <SearchBar x:Name="dfg" Placeholder="Bucar" 
+            Text="{Binding TextFilter}"
+            HorizontalOptions="FillAndExpand"
+        SearchCommand="{Binding SearchCommand}" 
+        SearchCommandParameter="ex"></SearchBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Picker x:Name="pickerFilter" 
+                HorizontalOptions="FillAndExpand" 
+                Grid.Column="0"
+                Title="Filtro">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                      <x:String>Ciudad</x:String>
+                      <x:String>Estado</x:String>
+                      <x:String>Misión</x:String>
+                      <x:String>Asociación</x:String>
+                      <x:String>Campo</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="pickerGroup" 
+                HorizontalOptions="FillAndExpand" 
+                Grid.Column="1"
+                Title="Filtro">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                      <x:String>Ciudad</x:String>
+                      <x:String>Estado</x:String>
+                      <x:String>Misión</x:String>
+                      <x:String>Asociación</x:String>
+                      <x:String>Campo</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Grid>
+<!--	</ContentPage.Content>-->
+        <ListView>
+
+        </ListView>
+        </StackLayout>
+</ContentPage>
