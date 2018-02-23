@@ -1,10 +1,14 @@
 ﻿using System;
+using maptest.Model;
+
 namespace maptest.ViewModels
 {
     public class CatalogoViewModel : NotificationEnabledObject
     {
+        ServiceIglesia service;
         public CatalogoViewModel()
         {
+            service = new ServiceIglesia();
         }
         private ActionCommand<String> _SearchCommand;
         public ActionCommand<String> SearchCommand
@@ -15,7 +19,7 @@ namespace maptest.ViewModels
                 {
                     _SearchCommand = new ActionCommand<string>((param) =>
                     {
-                        var pa = TextFilter;
+                        service.GetIglesias("cd", "laredo");
                     });
                 }
                 return _SearchCommand;
